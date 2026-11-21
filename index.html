@@ -9,10 +9,14 @@
     <meta property="og:description" content="An application built with Google AI Studio." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      function showErr(m){document.body.innerHTML='<pre style="padding:16px;white-space:pre-wrap;font-size:14px;color:#b00">'+m+'</pre>'}
+      window.addEventListener('error',function(e){showErr('ERROR: '+e.message+'\n'+(e.filename||'')+':'+(e.lineno||''))});
+      window.addEventListener('unhandledrejection',function(e){showErr('PROMISE ERROR: '+(e.reason&&e.reason.stack||e.reason))});
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
